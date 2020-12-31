@@ -1,0 +1,25 @@
+<?- contentFor('title') ?> Error interno
+
+<?- contentFor('css') ?>
+
+    <link href="<?= asset(env('css') + '/errors.min.css') ?>" rel="stylesheet">
+
+<?- contentFor('body') ?>
+
+<main role="main">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-8">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-4 mb-5">
+                    <div class="image-container">
+                        <img src="<?= asset("storage/page_error.png") ?>" loading="lazy" alt="Page error">
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-8">
+                    <h1>Error interno</h1>
+                    <p>Vaya... parece que tenemos problemas con nuestro servidor, por favor <a href="#">repórtanos este error</a> copiando y pegando el siguiente mensaje: <br><br> <?= err.stack ?> at line <?= err.path ?>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

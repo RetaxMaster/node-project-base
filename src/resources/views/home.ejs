@@ -1,0 +1,14 @@
+<?- contentFor('css') ?>
+
+    <link href="<?= asset(env('css') + '/home.min.css') ?>" rel="stylesheet">
+    <link href="<?= asset(env('css') + '/home.queries.min.css') ?>" rel="stylesheet">
+
+<?- contentFor('footer') ?>
+
+    <script src="<?= asset(env('js') + '/output/home.bundle.js') ?>"></script>
+
+<?- contentFor('body') ?>
+
+    <main role="main">
+        should be the main
+    </main>

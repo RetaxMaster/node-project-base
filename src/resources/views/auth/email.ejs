@@ -1,0 +1,74 @@
+<?- contentFor('title') ?>
+Enviar email de recuperación
+
+<?- contentFor('css') ?>
+
+    <link href="<?= asset(env('css') + '/auth.min.css') ?>" rel="stylesheet">
+    <link href="<?= asset(env('css') + '/auth.queries.min.css') ?>" rel="stylesheet">
+
+<?- contentFor('footer') ?>
+
+    <!-- <script src="<?= asset(env('js') + '/output/auth.bundle.js') ?>"></script> -->
+
+<?- contentFor('body') ?>
+
+<div class="row justify-content-center mx-auto mt-5">
+<? if(error_mailing.length > 0 || success_mailing.length > 0) { ?>
+
+        <div class="col-11 col-sm-12 col-md-9 col-lg-7 col-xl-6 col-xxl-5">
+
+            <? if(error_mailing.length > 0) { ?>
+            <div class="alert alert-danger alert-dismissible fade show m-0" role="alert">
+                <span><?= error_mailing ?></span>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <? } ?>
+
+            <? if(success_mailing.length > 0) { ?>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <span><?= success_mailing ?></span>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            <? } ?>
+
+        </div>
+        
+<? } ?>
+</div>
+
+<div class="container mb-5 mt-3 row justify-content-center mx-auto">
+
+    
+    <form action="<?= route('passwordEmail') ?>" class="card col-11 col-sm-12 col-md-9 col-lg-7 col-xl-6 col-xxl-5 py-4 auth" method="post">
+
+        <h1 class="text-center">Recupera tu contraseña</h1>
+        <p class="col-12 my-3">Te enviaremos un correo con un enlace para que puedas reestablecer tu contraseña.</p>
+
+        <div class="form-group col-12">
+            <label for="email">Correo electrónico</label>
+            <input type="text" class="form-control" id="email" placeholder="Correo electrónico" name="email">
+        </div>
+
+        <? if (Object.keys(errors).length > 0) { ?>
+            
+            <div class="errors">
+                <? getErrorsArray(errors).forEach(message => { ?>
+
+                    <p><?= message ?></p>
+    
+                <? }); ?>
+            </div>
+
+        <? } ?>
+
+        <div class="button-container">
+            <button class="btn btn-dark" type="submit" id="submit">Enviar correo</button>
+        </div>
+        
+    </form>
+
+</div>

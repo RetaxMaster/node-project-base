@@ -1,0 +1,106 @@
+  
+/*
+Archivo creado por RetaxMaster, este archivo maneja estilos de la ventana modal
+*/
+
+/* Modal */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: inline-block !important;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    opacity: 0;
+    z-index: -1;
+    transition: 0.3s all ease;
+
+    .modal-main {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        position: fixed;
+        top: -100%;
+        left: 0;
+        padding: 0 5px;
+        transition: 0.3s all ease;
+
+        .modal-card {
+            padding: 15px;
+            display: none;
+            background: #fff;
+            box-shadow: 0 0 4px 0 rgba(0, 0, 0, .08), 0 2px 4px 0 rgba(0, 0, 0, .12);
+            margin-bottom: 50px;
+        }
+
+        & > .row {
+            padding: 0 !important;
+            margin: 0 !important;
+            margin-top: 50px !important;
+        }
+
+        .row > div {
+            align-self: stretch !important;
+        }
+
+    }
+
+    &.show {
+        opacity: 1;
+        z-index: 10;
+    
+        .modal-main {
+            top: 0;
+        }
+    }
+
+}
+
+/* Loader */
+
+#loading,
+.loading {
+    color: #696969;
+    text-align: center;
+
+    .preloader {
+        display: inline-block;
+        width: 70px;
+        height: 70px;
+        border: 10px solid #eee;
+        border-top: 10px solid #666;
+        border-radius: 50%;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-name: loading;
+    }
+
+    .tag {
+        font-size: 16px;
+        display: inline-block;
+        width: 100%;
+        margin-top: 8px;
+    }
+
+}
+
+@keyframes loading {
+
+    0% {
+        transform: rotateZ(0);
+    }
+
+    100% {
+        transform: rotateZ(360deg);
+    }
+
+}
+
+/* ->Loader */
+
+/* ->Modal */

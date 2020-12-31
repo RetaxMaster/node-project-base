@@ -1,0 +1,79 @@
+<?- contentFor('css') ?>
+
+    <link href="<?= asset(env('css') + '/auth.min.css') ?>" rel="stylesheet">
+    <link href="<?= asset(env('css') + '/auth.queries.min.css') ?>" rel="stylesheet">
+
+<?- contentFor('footer') ?>
+
+    <script src="<?= asset(env('js') + '/output/auth.bundle.js') ?>"></script>
+
+<?- contentFor('body') ?>
+
+<div class="container my-5 row justify-content-center mx-auto">
+    
+    <form action="<?= route('auth') ?>" class="card col-11 col-sm-12 col-md-9 col-lg-7 col-xl-6 col-xxl-5 py-4 <?= formClass ?> auth" method="post">
+
+        <h1 class="mb-3 text-center"><?= textMode ?></h1>
+
+        <div class="row register-field">
+            
+            <div class="form-group col-12 col-sm-6">
+                <label for="name">Nombre</label>
+                <input type="text" class="form-control" id="name" placeholder="Nombre" name="name">
+            </div>
+
+            <div class="form-group col-12 col-sm-6">
+                <label for="lastName">Apellidos</label>
+                <input type="text" class="form-control" id="lastName" placeholder="Apellidos" name="lastName">
+            </div>
+
+        </div>
+
+        <div class="form-group col-12">
+            <label for="email">Correo electrónico</label>
+            <input type="text" class="form-control" id="email" placeholder="Correo electrónico" name="email">
+        </div>
+
+        <div class="form-group col-12">
+            <label for="password">Contraseña</label>
+            <input type="password" class="form-control" id="password" placeholder="Contraseña" name="password">
+        </div>
+
+        <div class="form-group col-12 register-field">
+            <label for="password_confirmation">Confirmar contraseña</label>
+            <input type="password" class="form-control" id="ppassword_confirmation" placeholder="Confirmar contraseña" name="password_confirmation">
+        </div>
+
+        <div class="form-group col-12 register-field">
+            <label for="birthDate">Fecha de nacimiento</label>
+            <input type="text" class="form-control" id="birthDate" placeholder="Fecha de nacimiento" name="birthDate">
+        </div>
+
+        <? if (Object.keys(errors).length > 0) { ?>
+            
+            <div class="errors">
+                <? getErrorsArray(errors).forEach(message => { ?>
+
+                    <p><?= message ?></p>
+    
+                <? }); ?>
+            </div>
+
+        <? } ?>
+
+        <div class="links">
+            <a href="#" class="goto-register">¿No tienes cuenta? ¡Regístrate!</a>
+            <a href="#" class="goto-forgot-password">¿Olvidaste tu contraseña?</a>
+            <a href="#" class="goto-login">¿Ya tienes cuenta? ¡Inicia sesión!</a>
+        </div>
+
+        <input type="hidden" name="mode" id="mode" value="<?= formClass ?>">
+        <input type="hidden" name="become" id="become" value="<?= become ?>">
+
+        <div class="button-container">
+            <button class="btn btn-dark" type="submit" id="submit"><?= textMode ?></button>
+        </div>
+        
+    </form>
+
+</div>

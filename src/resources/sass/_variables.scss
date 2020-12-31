@@ -1,0 +1,74 @@
+// Body
+$body-bg: #f8fafc;
+
+// Typography
+$font-family-sans-serif: 'Nunito', sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+// Colors
+/* $blue: #3e5a72;
+$indigo: #6574cd;
+$purple: #9561e2;
+$pink: #f66d9b;
+$red: #e3342f;
+$orange: #f6993f;
+$yellow: #ffed4a;
+$green: #38c172;
+$teal: #4dc0b5;
+$cyan: #6cb2eb; */
+
+$primary:       #2196f3;
+$secondary:     #00bcd4;
+$success:       #38c172;
+$info:          #6cb2eb;   
+$warning:       #ffed4a;
+$danger:        #e3342f;
+$light_2:       #bbdefb;
+$light:         #fff;
+$dark:          #1976d2;
+
+$primary_text:  #212121;
+$secondary_text:#757575;
+$divider:       #bdbdbd;
+$text_icons:    #fff;
+
+$star_starred: #FFcb57;
+$price: #00993b;
+
+// Definierndo nuevos breakpoints para bootstrap
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1380px,
+  xxxl: 1560px
+
+);
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1440px,
+  xxxl: 1600px
+);
+
+@mixin divider-right {
+  border-right: 1px solid $divider;
+}
+
+%divider-right {
+  @include divider-right;
+}
+
+@mixin un-divider-right {
+  border-right: none !important;
+}
+
+%un-divider-right {
+  @include un-divider-right;
+}

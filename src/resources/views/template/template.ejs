@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <?- defineContent("meta-tags") ?>
+  <!-- <link rel="shortcut icon" type="image/x-icon" href="{{ asset("storage/icon.ico") }}" /> -->
+
+  <link rel="stylesheet" href="<?= asset(env('css') + '/style.min.css') ?>">
+
+  <?- defineContent("css") ?>
+
+  <link href="<?= asset(env('css') + '/queries.min.css') ?>" rel="stylesheet">
+
+  <?- defineContent("querie") ?>
+  
+  <title><?- defineContent("title") ?> | <?= env("APP_NAME") ?></title>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+            
+            <a class="navbar-brand" href="<?= route("home") ?>" id="Logo">
+              <div class="image-container logo">
+                <img src="<?= asset("storage/Logo.png") ?>" loading="lazy" alt="<?= env("APP_NAME") ?>">
+              </div>
+            </a>
+      
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" id="menu-button">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarColor01">
+
+              <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item dropdown">
+
+                  <a class="nav-link dropdown-toggle" href="http://example.com" id="Categories" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Categorías
+                  </a>
+
+                  <ul class="dropdown-menu" aria-labelledby="Categories">
+
+                    <li><a class="dropdown-item" href="#">Tema #1</a></li>
+                    <li><a class="dropdown-item" href="#">Tema #2</a></li>
+
+                    <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Tema #3</a>
+
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Subtema #1</a></li>
+                        <li><a class="dropdown-item" href="#">Subtema #2</a></li>
+
+                      </ul>
+
+                    </li>
+
+                  </ul>
+
+                </li>
+
+              </ul>
+
+              <ul class="navbar-nav">
+
+                <li class="nav-item btn-oval-container">
+                  <a class="btn btn-light btn-oval oval-header" href="<?= route("teach") ?>">Quiero enseñar</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="<?= route("help") ?>">Ayuda</a>
+                </li>
+  
+                <li class="nav-item">
+                  <form action="<?= route("logout") ?>" method="POST">
+                    <button type="submit" class="nav-link">Cerrar sesión</button>
+                  </form>
+                </li>
+   
+                <li class="nav-item">
+                  <a class="nav-link" href="<?= route("login") ?>">Iniciar sesión</a>
+                </li>
+
+              </ul>
+            </div>
+          </nav>
+    </header>
+
+    <?- body ?>
+
+    <footer role="contentinfo">
+      <div class="row">
+        <div class="col-md-4">
+          <h6>Contacto</h6>
+          <div class="content">
+            <ul>
+              <li><a href="<?= route("help") ?>">Envíanos un mensaje</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h6>Legal</h6>
+            <ul>
+              <li><a href="<?= route("terms") ?>">Términos y condiciones</a></li>
+              <li><a href="<?= route("privacy") ?>">Aviso de privacidad</a></li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+          <h6>Síguenos</h6>
+          <ul>
+              <li><a href="https://www.facebook.com/" rel="nofollow" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
+              <li><a href="https://www.twitter.com/" rel="nofollow" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+              <li><a href="https://www.instagram.com/" rel="nofollow" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+              <li><a href="https://www.youtube.com/" rel="nofollow" target="_blank"><i class="fab fa-youtube"></i> YouTube</a></li>
+            </ul>
+        </div>
+      </div>
+      <div class="footer">
+        © 2020 Copyright: <?= env("APP_NAME") ?>
+      </div>
+    </footer>
+
+    <script src="<?= asset(env('js') + '/lib/modifiers.js') ?>"></script>
+    <script src="<?= asset(env('js') + '/output/scripts.bundle.js') ?>"></script>
+    <script src="https://kit.fontawesome.com/e71f2881bb.js" crossorigin="anonymous"></script>
+
+    <?- defineContent("footer") ?>
+
+</body>
+</html>

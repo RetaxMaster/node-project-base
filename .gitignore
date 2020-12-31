@@ -1,0 +1,6 @@
+node_modules
+src/node_modules
+src/mix-manifest.json
+.env
+package-lock.json
+sequelize-config.json

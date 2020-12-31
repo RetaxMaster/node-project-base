@@ -1,0 +1,30 @@
+ 
+<?- contentFor('title') ?> Página no encontrada
+
+<?- contentFor('css') ?>
+
+    <link href="<?= asset(env('css') + '/errors.min.css') ?>" rel="stylesheet">
+
+<?- contentFor('body') ?>
+
+<main role="main">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-8">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-4 mb-5">
+                    <div class="image-container">
+                        <img src="<?= asset("storage/page_error.png") ?>" loading="lazy" alt="Page error">
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-8">
+                    <h1>Página no encontrada</h1>
+                    <? if(typeof message != "undefined") {?>
+                        <p><?= message ?></p>
+                    <? } else {?>
+                        <p>La página que estás intentando visitar no existe. Revisa que tienes la dirección correcta y vuelve a intentarlo.</p>
+                    <? } ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
